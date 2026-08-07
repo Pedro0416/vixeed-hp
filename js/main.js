@@ -216,4 +216,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ===== 8) 代表挨拶：続きを読む / 戻る（折りたたみ） ===== */
+  const presidentMore = document.getElementById('president-message-more');
+  const presidentReadMore = document.getElementById('president-read-more');
+  const presidentReadBack = document.getElementById('president-read-back');
+  const presidentAnchor = document.getElementById('president-message-anchor');
+  if (presidentMore && presidentReadMore && presidentReadBack && presidentAnchor) {
+    presidentReadMore.addEventListener('click', () => {
+      presidentMore.hidden = false;
+      presidentReadMore.hidden = true;
+      presidentReadMore.setAttribute('aria-expanded', 'true');
+    });
+    presidentReadBack.addEventListener('click', () => {
+      presidentMore.hidden = true;
+      presidentReadMore.hidden = false;
+      presidentReadMore.setAttribute('aria-expanded', 'false');
+      presidentAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      presidentReadMore.focus({ preventScroll: true });
+    });
+  }
+
 });
