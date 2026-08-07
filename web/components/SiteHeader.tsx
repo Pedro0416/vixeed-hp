@@ -69,15 +69,6 @@ export function SiteHeader({ active }: SiteHeaderProps) {
               </span>
             </Link>
           ))}
-          <a
-            href="https://lin.ee/70GV5eO"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className="mt-2 flex w-full items-center justify-center rounded-full bg-[#0a0a0a] px-5 py-2 text-[0.8rem] font-semibold tracking-wide text-white transition-colors hover:bg-[#333] md:mt-0 md:ml-2 md:w-auto"
-          >
-            LINEで応募する
-          </a>
         </nav>
 
         <button

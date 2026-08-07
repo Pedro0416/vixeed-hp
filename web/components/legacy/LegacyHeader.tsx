@@ -33,14 +33,6 @@ export function LegacyHeader({ active, hero = false }: LegacyHeaderProps) {
               <span>{labelEn}</span>
             </Link>
           ))}
-          <a
-            href="https://lin.ee/70GV5eO"
-            className="nav-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LINEで応募する
-          </a>
         </nav>
         <div className="hamburger">
           <span />

@@ -126,17 +126,6 @@ export default function AboutPage() {
       </main>
 
       <SiteFooter />
-
-      <div className="fixed bottom-0 left-0 right-0 z-[99] border-t border-[#e0e0e0] bg-white/95 px-4 py-3 text-center backdrop-blur md:hidden">
-        <a
-          href="https://lin.ee/70GV5eO"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block rounded-md bg-[#0a0a0a] py-3 text-[0.88rem] font-bold text-white"
-        >
-          LINEで応募する
-        </a>
-      </div>
     </>
   );
 }
