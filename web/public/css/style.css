@@ -730,7 +730,18 @@ html.no-js .president-read-more-btn {
 .service-row:hover .service-block-img { transform: scale(1.04); }
 .service-block-img--01 { background-image: url('../images/service-01.jpg'); }
 .service-block-img--02 { background-image: url('../images/energy-business.jpg'); }
-.service-block-img--03 { background-image: url('../images/service-03.jpg'); }
+.service-block-img--03 {
+  background-image: url('../images/dx-business.jpg');
+  background-size: 108% 108%;
+  animation: dxKenBurns 16s ease-in-out infinite alternate;
+}
+.reveal.is-visible .service-block-img--03.media-reveal {
+  animation: dxKenBurns 16s ease-in-out infinite alternate;
+}
+@keyframes dxKenBurns {
+  from { background-position: 45% 50%; background-size: 108% 108%; }
+  to { background-position: 55% 48%; background-size: 114% 114%; }
+}
 .service-block-img--04 { background-image: url('../images/service-04.jpg'); }
 
 .service-block-img::after {
@@ -1534,6 +1545,7 @@ html.no-js .president-read-more-btn {
   .core-value-card,
   .media-reveal,
   .service-block-img--02.media-reveal,
+  .service-block-img--03.media-reveal,
   .hero-bg-parallax { opacity: 1; transform: none; clip-path: none; animation: none !important; }
   .hero-scroll i::after { animation: none !important; }
 }

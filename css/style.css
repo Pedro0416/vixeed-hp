@@ -681,7 +681,15 @@ html.no-js .president-read-more-btn {
   background-size: 110% 110%;
   animation: energyKenBurns 14s ease-in-out infinite alternate;
 }
-.service-block-img--03 { background-image: url('../images/service-03.jpg'); }
+.service-block-img--03 {
+  background-image: url('../images/dx-business.jpg');
+  background-size: 108% 108%;
+  animation: dxKenBurns 16s ease-in-out infinite alternate;
+}
+@keyframes dxKenBurns {
+  from { background-position: 45% 50%; background-size: 108% 108%; }
+  to { background-position: 55% 48%; background-size: 114% 114%; }
+}
 .service-block-img--04 { background-image: url('../images/service-04.jpg'); }
 .service-block-img::after {
   content: '';
