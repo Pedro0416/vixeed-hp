@@ -733,12 +733,38 @@ html.no-js .president-read-more-btn {
 .service-block-img--03 { background-image: url('../images/service-03.jpg'); }
 .service-block-img--04 { background-image: url('../images/service-04.jpg'); }
 
+.service-block-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(15, 18, 28, 0.18));
+  opacity: 0.65;
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease);
+}
+.service-row:hover .service-block-img::after { opacity: 0.35; }
+
 .media-reveal {
   clip-path: inset(0 0 100% 0);
-  transition: clip-path 0.9s var(--ease);
+  transform: scale(1.08);
+  transition:
+    clip-path 1s var(--ease),
+    transform 1.25s var(--ease);
 }
 .reveal.is-visible .media-reveal {
   clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+.service-block-img--02.media-reveal {
+  background-size: 110% 110%;
+  animation: none;
+}
+.reveal.is-visible .service-block-img--02.media-reveal {
+  animation: energyKenBurns 14s ease-in-out infinite alternate;
+}
+@keyframes energyKenBurns {
+  from { background-position: 40% 50%; background-size: 110% 110%; }
+  to { background-position: 60% 45%; background-size: 118% 118%; }
 }
 
 /* ========== 各事業の詳細（画像＋見出し＋本文） ========== */
@@ -772,7 +798,9 @@ html.no-js .president-read-more-btn {
     transform 700ms var(--ease),
     opacity 700ms var(--ease);
 }
-.business-detail-img { width: 100%; height: auto; display: block; object-fit: cover; }
+.business-detail-img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 1.1s var(--ease); }
+.business-detail.is-visible .business-detail-img { transform: scale(1.03); }
+.business-detail-img-wrap:hover .business-detail-img { transform: scale(1.07); }
 .business-detail-title {
   font-size: clamp(1.15rem, 2.2vw, 1.4rem); font-weight: 700; color: var(--black);
   margin-bottom: 1rem; letter-spacing: 0.02em;
@@ -1505,6 +1533,7 @@ html.no-js .president-read-more-btn {
   .business-detail-text,
   .core-value-card,
   .media-reveal,
+  .service-block-img--02.media-reveal,
   .hero-bg-parallax { opacity: 1; transform: none; clip-path: none; animation: none !important; }
   .hero-scroll i::after { animation: none !important; }
 }

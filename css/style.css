@@ -670,11 +670,30 @@ html.no-js .president-read-more-btn {
 .service-block-img {
   flex: 1 1 50%; min-height: 280px;
   background-color: #e8e8e8; background-size: cover; background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.7s cubic-bezier(.22,1,.36,1);
 }
+.service-row:hover .service-block-img { transform: scale(1.04); }
 .service-block-img--01 { background-image: url('../images/service-01.jpg'); }
-.service-block-img--02 { background-image: url('../images/service-02.jpg'); }
+.service-block-img--02 {
+  background-image: url('../images/service-02.jpg');
+  background-size: 110% 110%;
+  animation: energyKenBurns 14s ease-in-out infinite alternate;
+}
 .service-block-img--03 { background-image: url('../images/service-03.jpg'); }
 .service-block-img--04 { background-image: url('../images/service-04.jpg'); }
+.service-block-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(15, 18, 28, 0.18));
+  opacity: 0.65;
+  pointer-events: none;
+}
+@keyframes energyKenBurns {
+  from { background-position: 40% 50%; background-size: 110% 110%; }
+  to { background-position: 60% 45%; background-size: 118% 118%; }
+}
 
 /* ========== 各事業の詳細（画像＋見出し＋本文） ========== */
 .business-detail-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
