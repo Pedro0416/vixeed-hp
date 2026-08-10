@@ -50,7 +50,7 @@ export default function ServicePage() {
           <article className="business-detail reveal" id="business-02">
             <div className="business-detail-img-wrap">
               <Image
-                src="/images/business-detail-02.jpg"
+                src="/images/energy-business-detail.jpg"
                 alt="エネルギー事業"
                 className="business-detail-img"
                 width={1200}
