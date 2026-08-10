@@ -677,7 +677,7 @@ html.no-js .president-read-more-btn {
 .service-row:hover .service-block-img { transform: scale(1.04); }
 .service-block-img--01 { background-image: url('../images/service-01.jpg'); }
 .service-block-img--02 {
-  background-image: url('../images/energy-business.jpg');
+  background-image: url('../images/energy-business-v2.jpg');
   background-size: 110% 110%;
   animation: energyKenBurns 14s ease-in-out infinite alternate;
 }
