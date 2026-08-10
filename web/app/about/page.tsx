@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "私たちについて | Vixeed",
   description:
-    "株式会社Vixeedの信念・未来図・理念・使命。挑戦は楽しい。信念ある挑戦が当たり前の社会へ。",
+    "株式会社VixeedのCore Value。挑戦を楽しむ、感謝、与える精神、relationship＆teamwork、信念を貫く。",
 };
 
 export default function AboutPage() {
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </tr>
               <tr className="border-b border-[#e0e0e0]">
                 <th className="py-4 font-semibold text-[#0a0a0a]">従業員数</th>
-                <td className="py-4 text-[#666]">8名</td>
+                <td className="py-4 text-[#666]">15名</td>
               </tr>
               <tr className="border-b border-[#e0e0e0]">
                 <th className="align-top py-4 font-semibold text-[#0a0a0a]">
@@ -117,7 +117,7 @@ export default function AboutPage() {
             &ldquo;
           </span>
           <p className="font-[family-name:var(--font-noto)] relative mx-auto max-w-[550px] text-[clamp(1.1rem,2.2vw,1.5rem)] font-normal leading-[2.4] tracking-wide text-[#0a0a0a]">
-            ここを挑戦を楽しむ。
+            信念を貫く
           </p>
           <small className="font-[family-name:var(--font-inter)] mt-6 block text-[0.68rem] uppercase tracking-[0.15em] text-[#999]">
             代表 大田 将馬

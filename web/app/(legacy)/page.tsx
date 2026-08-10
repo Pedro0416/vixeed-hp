@@ -27,19 +27,6 @@ export default function HomePage() {
             <br />
             日本の若者に勇気と希望を届ける。
           </p>
-          <div className="hero-actions hero-stagger">
-            <a
-              href="https://lin.ee/70GV5eO"
-              className="hero-btn hero-btn--primary btn-hover"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LINEで応募する
-            </a>
-            <Link href="/service/" className="hero-btn hero-btn--ghost btn-hover">
-              事業を見る
-            </Link>
-          </div>
         </div>
         <div className="hero-scroll" aria-hidden>
           <span>Scroll</span>
@@ -178,8 +165,7 @@ export default function HomePage() {
       </section>
 
       <section className="quote quote--motion">
-        <p className="reveal">ここを挑戦を楽しむ。</p>
-        <small className="reveal">愛、感謝、挑戦、信念を貫く</small>
+        <p className="reveal">信念を貫く</p>
       </section>
     </LegacyPageShell>
   );

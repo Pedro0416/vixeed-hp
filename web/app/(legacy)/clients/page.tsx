@@ -71,7 +71,7 @@ export default function ClientsPage() {
               <div className="stat-label">顧客継続率</div>
             </div>
             <div className="stat">
-              <div className="stat-val countup">8名</div>
+              <div className="stat-val countup">15名</div>
               <div className="stat-label">在籍メンバー</div>
             </div>
             <div className="stat">

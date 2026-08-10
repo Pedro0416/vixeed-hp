@@ -1,187 +1,224 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Heart, ShieldCheck, Sprout, Telescope } from "lucide-react";
+import {
+  Flag,
+  Handshake,
+  HeartHandshake,
+  Users,
+  Waypoints,
+} from "lucide-react";
 import { useMemo } from "react";
-import { GlassTiltCard } from "./GlassTiltCard";
 
-const fadeUpMotion = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+const values = [
+  {
+    num: "01",
+    ja: "挑戦を楽しむ",
+    en: "Enjoy Challenge",
+    desc: "変化を機会と捉え、前向きに挑戦し続ける。楽しむ姿勢が、成果と成長を生み出します。",
+    icon: Flag,
   },
-};
-
-const fadeUpReduced = {
-  hidden: { opacity: 1, y: 0 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const staggerCards = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.05 },
+  {
+    num: "02",
+    ja: "感謝",
+    en: "Gratitude",
+    desc: "関わるすべての人への敬意と感謝を忘れず、誠実な関係を積み重ねます。",
+    icon: HeartHandshake,
   },
-};
+  {
+    num: "03",
+    ja: "与える精神",
+    en: "Give First",
+    desc: "自らが先に価値を届ける。見返りを前提とせず、貢献から信頼を築きます。",
+    icon: Handshake,
+  },
+  {
+    num: "04",
+    ja: "relationship＆teamwork",
+    en: "Relationship & Teamwork",
+    desc: "個の力をチームの力へ。対話と協力を通じて、より大きな成果を実現します。",
+    icon: Users,
+  },
+  {
+    num: "05",
+    ja: "信念を貫く",
+    en: "Conviction",
+    desc: "正しいと信じた道を、責任を持って貫く。一貫した姿勢が信頼の土台になります。",
+    icon: Waypoints,
+  },
+] as const;
 
-const staggerCardsReduced = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0 } },
-};
-
-const viewport = { once: true, amount: 0.25 };
+const ease = [0.22, 1, 0.36, 1] as const;
+const viewport = { once: true, amount: 0.15 };
 
 export function CoreValueSection() {
   const reduceMotion = useReducedMotion();
-  const fadeUp = useMemo(
-    () => (reduceMotion ? fadeUpReduced : fadeUpMotion),
+
+  const headerVariants = useMemo(
+    () =>
+      reduceMotion
+        ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
+        : {
+            hidden: { opacity: 0, y: 24 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.65, ease },
+            },
+          },
     [reduceMotion],
   );
-  const staggerParent = useMemo(
-    () => (reduceMotion ? staggerCardsReduced : staggerCards),
+
+  const listVariants = useMemo(
+    () =>
+      reduceMotion
+        ? { hidden: {}, visible: {} }
+        : {
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+            },
+          },
     [reduceMotion],
   );
+
+  const rowVariants = useMemo(
+    () =>
+      reduceMotion
+        ? { hidden: { opacity: 1, x: 0 }, visible: { opacity: 1, x: 0 } }
+        : {
+            hidden: { opacity: 0, x: -28 },
+            visible: {
+              opacity: 1,
+              x: 0,
+              transition: { duration: 0.55, ease },
+            },
+          },
+    [reduceMotion],
+  );
+
+  const lineVariants = useMemo(
+    () =>
+      reduceMotion
+        ? { hidden: { scaleY: 1 }, visible: { scaleY: 1 } }
+        : {
+            hidden: { scaleY: 0 },
+            visible: {
+              scaleY: 1,
+              transition: { duration: 1.1, ease, delay: 0.2 },
+            },
+          },
+    [reduceMotion],
+  );
+
   return (
     <section
-      className="relative overflow-hidden bg-[#f6f7f9] px-4 py-16 md:px-8 md:py-24"
+      className="relative overflow-hidden border-y border-[#e8e8ec] bg-[#f7f7f8] px-4 py-16 md:px-8 md:py-28"
       aria-labelledby="core-value-heading"
     >
       <div
-        className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a227]/50 to-transparent"
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-[900px]">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          variants={fadeUp}
+          variants={headerVariants}
           className="text-center"
         >
-          <p className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-[0.35em] text-[#9a7b2e]">
+          <p className="font-[family-name:var(--font-inter)] text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#9a7b2e]">
             Core Value
           </p>
           <h2
             id="core-value-heading"
-            className="font-[family-name:var(--font-noto)] mt-3 text-lg font-bold tracking-[0.12em] text-[#0a0a0a] md:text-xl"
+            className="font-[family-name:var(--font-noto)] mt-3 text-[1.4rem] font-bold tracking-[0.1em] text-[#0a0a0a] md:text-[1.65rem]"
           >
             VixeedのCore Value
           </h2>
+          <motion.span
+            aria-hidden
+            initial={reduceMotion ? false : { scaleX: 0 }}
+            whileInView={reduceMotion ? undefined : { scaleX: 1 }}
+            viewport={viewport}
+            transition={{ duration: 0.7, ease, delay: 0.25 }}
+            className="mx-auto mt-5 block h-px w-16 origin-center bg-[#c9a227]"
+          />
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-[#666]">
+            事業と組織の判断基準となる、5つの行動指針です。
+          </p>
         </motion.div>
 
-        {/* 1. 信念 Conviction */}
-        <motion.article
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={fadeUp}
-          className="font-[family-name:var(--font-noto)] relative mx-auto mt-12 max-w-3xl rounded-2xl border border-[#e8e8ec] bg-white p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)] md:mt-16 md:p-12"
-        >
-          <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
-            <span
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#C9A227]/12 text-[#9a7b2e]"
-              aria-hidden
-            >
-              <ShieldCheck className="h-7 w-7" strokeWidth={1.5} />
-            </span>
-            <div className="text-center sm:text-left">
-              <h3 className="font-[family-name:var(--font-noto)] text-xl font-bold tracking-wide text-[#0a0a0a] md:text-2xl">
-                信念{" "}
-                <span className="font-[family-name:var(--font-inter)] font-semibold lowercase text-[#9a7b2e]">
-                  conviction
-                </span>
-              </h3>
-            </div>
-          </div>
+        <div className="relative mt-14 md:mt-16">
+          <motion.div
+            aria-hidden
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            variants={lineVariants}
+            className="absolute bottom-6 left-[1.35rem] top-6 hidden w-px origin-top bg-[#e5e5e8] sm:left-[5.35rem] sm:block md:left-[5.6rem]"
+          />
 
-          <p className="text-center font-[family-name:var(--font-noto)] text-[clamp(1.75rem,6vw,3rem)] font-black leading-tight tracking-tight text-[#b28a1d] sm:text-[clamp(2rem,5vw,3.25rem)]">
-            挑戦は、楽しい。
-          </p>
-
-          <p className="font-[family-name:var(--font-noto)] mt-8 text-sm leading-[2.05] text-[#444] md:text-[0.95rem]">
-            信じた道を誠実に歩み続ける。自らの信念に基づき選択し、責任を持って行動し続けることが、持続的な成長と価値創出につながると考えています。私たちは、一つひとつの挑戦に真摯に向き合い、社会に対して誠実であり続けます。
-          </p>
-        </motion.article>
-
-        {/* 2. 未来図 / 理念 / 使命 */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={staggerParent}
-          className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-5"
-        >
-          <GlassTiltCard
-            tiltDisabled={!!reduceMotion}
-            icon={Telescope}
-            labelEn="Vision"
-            labelJa="未来図"
-            title={
-              <>
-                信念ある挑戦が当たり前の社会に。
-                <br />
-                挑戦が尊重される社会の実現へ…
-              </>
-            }
+          <motion.ol
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            variants={listVariants}
+            className="space-y-3 md:space-y-4"
           >
-            <p>
-              挑戦が尊重される社会の実現へ。挑戦する人が正当に評価される環境を創出し、個々の可能性が最大限発揮される社会を目指します。その実現に向けて、事業を通じた価値提供を継続してまいります。
-            </p>
-          </GlassTiltCard>
+            {values.map(({ num, ja, en, desc, icon: Icon }) => (
+              <motion.li key={num} variants={rowVariants}>
+                <article className="group relative grid grid-cols-[auto_1fr] gap-4 overflow-hidden rounded-xl border border-[#e8e8ec] bg-white px-4 py-5 shadow-[0_1px_0_rgba(0,0,0,0.02)] transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#c9a227]/45 hover:shadow-[0_12px_36px_rgba(0,0,0,0.06)] sm:grid-cols-[3.25rem_3.25rem_1fr] sm:gap-5 sm:px-5 sm:py-6 md:gap-6">
+                  <span
+                    aria-hidden
+                    className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 bg-[#c9a227] transition-transform duration-300 ease-out group-hover:scale-y-100"
+                  />
 
-          <GlassTiltCard
-            tiltDisabled={!!reduceMotion}
-            icon={Heart}
-            labelEn="Philosophy"
-            labelJa="理念"
-            title={
-              <>
-                愛、感謝、挑戦。
-                <br />
-                人を尊び、感謝を忘れず、挑戦し続ける…
-              </>
-            }
-          >
-            <p>
-              すべての事業活動の根底には「人」があります。関わるすべての方々へ、愛と感謝を大切にしながら、挑戦を通じて社会に新たな価値を創出していきます。
-            </p>
-          </GlassTiltCard>
+                  <div className="relative z-[1] flex flex-col items-start pt-0.5">
+                    <span className="font-[family-name:var(--font-inter)] text-[0.72rem] font-semibold tracking-[0.14em] text-[#9a7b2e] transition-transform duration-300 group-hover:translate-x-0.5">
+                      {num}
+                    </span>
+                    <span className="mt-3 hidden h-2 w-2 rounded-full border border-[#c9a227]/70 bg-white sm:block" />
+                  </div>
 
-          <GlassTiltCard
-            tiltDisabled={!!reduceMotion}
-            icon={Sprout}
-            labelEn="Mission"
-            labelJa="使命"
-            title={
-              <>
-                信念の種を蒔き、
-                <br />
-                社会に価値を芽吹かせる
-              </>
-            }
-          >
-            <p>一人ひとりの可能性を育て、未来につながる価値を社会に広げていく。</p>
-          </GlassTiltCard>
-        </motion.div>
+                  <div
+                    className="relative z-[1] hidden h-12 w-12 items-center justify-center border border-[#e8e8ec] bg-[#fafafa] text-[#0a0a0a] transition-[background-color,border-color,color,transform] duration-300 group-hover:scale-105 group-hover:border-[#c9a227]/55 group-hover:bg-[#1c222b] group-hover:text-[#e5c158] sm:flex"
+                    aria-hidden
+                  >
+                    <Icon
+                      className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                      strokeWidth={1.6}
+                    />
+                  </div>
 
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          variants={fadeUp}
-          className="font-[family-name:var(--font-noto)] mx-auto mt-14 max-w-2xl text-center text-sm leading-[2] text-[#555] md:mt-16"
-        >
-          「信念」と「挑戦」を軸に、若者を支え、社会に価値を生み出す。
-          <br className="hidden sm:inline" />
-          日本の若者に、勇気と希望を届ける。
-        </motion.p>
+                  <div className="relative z-[1] min-w-0">
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#e8e8ec] bg-[#fafafa] text-[#0a0a0a] transition-colors duration-300 group-hover:border-[#c9a227]/55 group-hover:bg-[#1c222b] group-hover:text-[#e5c158] sm:hidden"
+                        aria-hidden
+                      >
+                        <Icon className="h-4 w-4" strokeWidth={1.6} />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-[family-name:var(--font-noto)] text-[1.08rem] font-bold tracking-wide text-[#0a0a0a] transition-colors duration-300 group-hover:text-[#1c222b] md:text-[1.2rem]">
+                          {ja}
+                        </h3>
+                        <p className="font-[family-name:var(--font-inter)] mt-1 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-[#999] transition-colors duration-300 group-hover:text-[#9a7b2e]">
+                          {en}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm leading-[1.9] text-[#555] transition-colors duration-300 group-hover:text-[#333] md:max-w-[38rem]">
+                      {desc}
+                    </p>
+                  </div>
+                </article>
+              </motion.li>
+            ))}
+          </motion.ol>
+        </div>
       </div>
     </section>
   );
