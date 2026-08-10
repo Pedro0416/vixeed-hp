@@ -729,12 +729,12 @@ html.no-js .president-read-more-btn {
 }
 .service-row:hover .service-block-img { transform: scale(1.04); }
 .service-block-img--01 { background-image: url('../images/service-01.jpg'); }
-.service-block-img--02 { background-image: url('../images/energy-business-v2.jpg'); }
+.service-block-img--02 { background-image: url('../images/energy-home-v3.jpg'); }
 .reveal.is-visible .service-block-img--02.media-reveal {
   animation: energyKenBurns 14s ease-in-out infinite alternate;
 }
 .service-block-img--03 {
-  background-image: url('../images/dx-business-v2.jpg');
+  background-image: url('../images/dx-home-v3.jpg');
   background-size: 108% 108%;
   animation: dxKenBurns 16s ease-in-out infinite alternate;
 }

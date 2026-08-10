@@ -50,7 +50,7 @@ export default function ServicePage() {
           <article className="business-detail reveal" id="business-02">
             <div className="business-detail-img-wrap">
               <Image
-                src="/images/energy-business-detail-v2.jpg"
+                src="/images/energy-detail-v3.jpg"
                 alt="エネルギー事業"
                 className="business-detail-img"
                 width={1200}
@@ -67,7 +67,7 @@ export default function ServicePage() {
           <article className="business-detail reveal" id="business-03">
             <div className="business-detail-img-wrap">
               <Image
-                src="/images/dx-business-detail-v2.jpg"
+                src="/images/dx-detail-v3.jpg"
                 alt="DX支援事業（SaaS等）"
                 className="business-detail-img"
                 width={1200}
