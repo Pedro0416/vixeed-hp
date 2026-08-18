@@ -158,7 +158,7 @@ export default function HomePage() {
             <span>株式会社Vixeed 設立</span>
           </div>
           <div className="news-item reveal delay-2">
-            <span className="news-date">2025.10.07</span>
+            <span className="news-date">2026.5.31</span>
             <span>ホームページを公開しました</span>
           </div>
         </div>

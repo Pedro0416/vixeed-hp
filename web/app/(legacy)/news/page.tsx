@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const newsItems = [
   { date: "2025.10.07", text: "株式会社Vixeed 設立" },
-  { date: "2025.10.07", text: "ホームページを公開しました" },
+  { date: "2026.5.31", text: "ホームページを公開しました" },
 ];
 
 export default function NewsPage() {
