@@ -5,7 +5,7 @@ export function initLegacyEffects(): Cleanup {
 
   const cleanups: Cleanup[] = [];
 
-  const reveals = document.querySelectorAll(".reveal");
+  const reveals = document.querySelectorAll(".reveal, .mask-reveal, .draw-line");
   if (reveals.length) {
     const revealIO = new IntersectionObserver(
       (entries) => {

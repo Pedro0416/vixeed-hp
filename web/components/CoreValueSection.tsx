@@ -48,8 +48,8 @@ const values = [
   },
 ] as const;
 
-const ease = [0.22, 1, 0.36, 1] as const;
-const viewport = { once: true, amount: 0.15 };
+const ease = [0.4, 0.4, 0, 1] as const;
+const viewport = { once: true, amount: 0.18 };
 
 export function CoreValueSection() {
   const reduceMotion = useReducedMotion();
@@ -59,11 +59,11 @@ export function CoreValueSection() {
       reduceMotion
         ? { hidden: { opacity: 1 }, visible: { opacity: 1 } }
         : {
-            hidden: { opacity: 0, y: 24 },
+            hidden: { opacity: 0, y: 40 },
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.65, ease },
+              transition: { duration: 0.6, ease },
             },
           },
     [reduceMotion],
@@ -76,7 +76,7 @@ export function CoreValueSection() {
         : {
             hidden: {},
             visible: {
-              transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+              transition: { staggerChildren: 0.12, delayChildren: 0.18 },
             },
           },
     [reduceMotion],
@@ -85,13 +85,13 @@ export function CoreValueSection() {
   const rowVariants = useMemo(
     () =>
       reduceMotion
-        ? { hidden: { opacity: 1, x: 0 }, visible: { opacity: 1, x: 0 } }
+        ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
         : {
-            hidden: { opacity: 0, x: -28 },
+            hidden: { opacity: 0, y: 40 },
             visible: {
               opacity: 1,
-              x: 0,
-              transition: { duration: 0.55, ease },
+              y: 0,
+              transition: { duration: 0.6, ease },
             },
           },
     [reduceMotion],
@@ -105,7 +105,7 @@ export function CoreValueSection() {
             hidden: { scaleY: 0 },
             visible: {
               scaleY: 1,
-              transition: { duration: 1.1, ease, delay: 0.2 },
+              transition: { duration: 1.0, ease, delay: 0.25 },
             },
           },
     [reduceMotion],
@@ -129,12 +129,12 @@ export function CoreValueSection() {
           variants={headerVariants}
           className="text-center"
         >
-          <p className="font-[family-name:var(--font-inter)] text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#9a7b2e]">
+          <p className="font-[family-name:var(--font-inter)] text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-[#9a7b2e]">
             Core Value
           </p>
           <h2
             id="core-value-heading"
-            className="font-[family-name:var(--font-noto)] mt-3 text-[1.4rem] font-bold tracking-[0.1em] text-[#0a0a0a] md:text-[1.65rem]"
+            className="font-[family-name:var(--font-serif)] mt-4 text-[clamp(1.55rem,3vw,2rem)] font-bold tracking-[-0.01em] text-[#0a0a0a]"
           >
             VixeedのCore Value
           </h2>
@@ -143,10 +143,10 @@ export function CoreValueSection() {
             initial={reduceMotion ? false : { scaleX: 0 }}
             whileInView={reduceMotion ? undefined : { scaleX: 1 }}
             viewport={viewport}
-            transition={{ duration: 0.7, ease, delay: 0.25 }}
-            className="mx-auto mt-5 block h-px w-16 origin-center bg-[#c9a227]"
+            transition={{ duration: 0.8, ease, delay: 0.2 }}
+            className="mx-auto mt-6 block h-px w-14 origin-center bg-[#c9a227]"
           />
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-[#666]">
+          <p className="mx-auto mt-6 max-w-lg text-[0.95rem] leading-[1.95] text-[#555]">
             事業と組織の判断基準となる、5つの行動指針です。
           </p>
         </motion.div>
@@ -202,15 +202,15 @@ export function CoreValueSection() {
                         <Icon className="h-4 w-4" strokeWidth={1.6} />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="font-[family-name:var(--font-noto)] text-[1.08rem] font-bold tracking-wide text-[#0a0a0a] transition-colors duration-300 group-hover:text-[#1c222b] md:text-[1.2rem]">
+                        <h3 className="font-[family-name:var(--font-noto)] text-[clamp(1.05rem,2vw,1.22rem)] font-bold tracking-[-0.01em] text-[#0a0a0a] transition-colors duration-300 group-hover:text-[#1c222b]">
                           {ja}
                         </h3>
-                        <p className="font-[family-name:var(--font-inter)] mt-1 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-[#999] transition-colors duration-300 group-hover:text-[#9a7b2e]">
+                        <p className="font-[family-name:var(--font-inter)] mt-1.5 text-[0.65rem] font-medium uppercase tracking-[0.18em] text-[#999] transition-colors duration-300 group-hover:text-[#9a7b2e]">
                           {en}
                         </p>
                       </div>
                     </div>
-                    <p className="mt-3 text-sm leading-[1.9] text-[#555] transition-colors duration-300 group-hover:text-[#333] md:max-w-[38rem]">
+                    <p className="mt-3.5 text-[0.92rem] leading-[1.95] text-[#555] transition-colors duration-300 group-hover:text-[#333] md:max-w-[36rem]">
                       {desc}
                     </p>
                   </div>

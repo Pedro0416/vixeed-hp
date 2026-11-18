@@ -1,7 +1,11 @@
-export function InstagramIcon() {
+type InstagramIconProps = {
+  className?: string;
+};
+
+export function InstagramIcon({ className }: InstagramIconProps) {
   return (
     <svg
-      className="icon-ig"
+      className={className ? `icon-ig ${className}` : "icon-ig"}
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"

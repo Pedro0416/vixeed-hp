@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { DM_Sans, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
@@ -9,9 +9,17 @@ const notoSansJp = Noto_Sans_JP({
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const notoSerifJp = Noto_Serif_JP({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -31,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${inter.variable} ${notoSansJp.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${notoSansJp.variable} ${notoSerifJp.variable} h-full antialiased`}
     >
-      <body className="font-sans min-h-full bg-white text-[#0a0a0a]">
+      <body className="font-[family-name:var(--font-noto)] min-h-full bg-white text-[#0a0a0a]">
         {children}
       </body>
     </html>

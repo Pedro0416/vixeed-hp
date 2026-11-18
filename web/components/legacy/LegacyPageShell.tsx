@@ -1,4 +1,4 @@
-import { LegacyFooter } from "@/components/legacy/LegacyFooter";
+import { SiteFooter } from "@/components/SiteFooter";
 import { LegacyHeader } from "@/components/legacy/LegacyHeader";
 import { LegacyMobileCta } from "@/components/legacy/LegacyMobileCta";
 import type { NavId } from "@/lib/nav";
@@ -18,7 +18,7 @@ export function LegacyPageShell({
     <>
       <LegacyHeader active={active} hero={hero} />
       {children}
-      <LegacyFooter />
+      <SiteFooter />
       <LegacyMobileCta />
     </>
   );

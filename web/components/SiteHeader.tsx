@@ -43,7 +43,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
             className="h-9 w-auto"
             unoptimized
           />
-          <span className="font-[family-name:var(--font-inter)] text-[1.35rem] font-semibold tracking-tight text-[#0a0a0a]">
+          <span className="font-[family-name:var(--font-inter)] text-[1.28rem] font-semibold tracking-[-0.02em] text-[#0a0a0a]">
             Vixeed
           </span>
         </Link>

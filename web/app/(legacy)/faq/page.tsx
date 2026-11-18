@@ -83,7 +83,7 @@ export default function FaqPage() {
           href="https://line.me/R/ti/p/@vixeed"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-white btn-hover reveal"
+          className="btn-line btn-hover reveal"
         >
           LINEで応募する
         </a>

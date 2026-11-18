@@ -16,11 +16,16 @@ export default function HomePage() {
         <div className="hero-bg-parallax" />
         <div className="hero-veil" aria-hidden />
         <div className="hero-inner">
-          <p className="hero-eyebrow hero-stagger">Vixeed Inc.</p>
-          <h1 className="hero-stagger">
-            信念の種を蒔き
-            <br />
-            社会に価値を芽吹かせる
+          <p className="hero-eyebrow mask-reveal is-visible">
+            <span>Vixeed Inc.</span>
+          </p>
+          <h1>
+            <span className="mask-reveal is-visible">
+              <span>信念の種を蒔き</span>
+            </span>
+            <span className="mask-reveal delay-1 is-visible">
+              <span>社会に価値を芽吹かせる</span>
+            </span>
           </h1>
           <p className="hero-sub hero-stagger">
             信念ある挑戦が当たり前の社会を目指し、
@@ -38,7 +43,10 @@ export default function HomePage() {
         <div className="service-sec-inner">
           <div className="service-header reveal">
             <span className="service-label">Business</span>
-            <h2>事業内容</h2>
+            <h2 className="mask-reveal">
+              <span>事業内容</span>
+            </h2>
+            <span className="draw-line draw-line--center" aria-hidden />
             <p className="service-lead">
               エネルギーとデジタル。二つの軸で、現場に根ざした価値をつくる。
             </p>
@@ -94,7 +102,7 @@ export default function HomePage() {
         </p>
         <a
           href="https://lin.ee/70GV5eO"
-          className="btn-white btn-hover reveal"
+          className="btn-line btn-hover reveal"
           target="_blank"
           rel="noopener noreferrer"
         >

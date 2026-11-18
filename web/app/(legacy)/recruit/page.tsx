@@ -226,7 +226,7 @@ export default function RecruitPage() {
           href="https://line.me/R/ti/p/@vixeed"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-white reveal btn-hover"
+          className="btn-line reveal btn-hover"
         >
           LINEで応募する
         </a>

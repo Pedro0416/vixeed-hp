@@ -119,7 +119,7 @@ export default function CareerPage() {
         <p className="reveal">
           事業拡大に伴い、インターン・正社員（新卒／第二新卒／中途）で一緒に働く仲間を募集しています
         </p>
-        <Link href="/contact/" className="btn-white reveal btn-hover">
+        <Link href="/contact/" className="btn-line reveal btn-hover">
           LINEで応募する
         </Link>
       </section>

@@ -89,7 +89,7 @@ export default function ServicePage() {
         <p className="reveal">インターン・正社員（新卒／第二新卒／中途）募集中</p>
         <a
           href="https://lin.ee/70GV5eO"
-          className="btn-white reveal btn-hover"
+          className="btn-line reveal btn-hover"
           target="_blank"
           rel="noopener noreferrer"
         >

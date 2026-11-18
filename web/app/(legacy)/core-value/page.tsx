@@ -102,7 +102,7 @@ export default function CoreValuePage() {
       <section className="cta-sec">
         <h2 className="line-anim reveal">この価値観に共感する仲間を求めています</h2>
         <p className="reveal">インターン（未経験歓迎）・正社員（新卒／第二新卒／中途）募集中</p>
-        <Link href="/contact/" className="btn-white btn-hover reveal">
+        <Link href="/contact/" className="btn-line btn-hover reveal">
           LINEで応募する
         </Link>
       </section>

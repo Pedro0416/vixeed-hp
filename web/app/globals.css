@@ -3,21 +3,40 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
+  --text-display: clamp(2.35rem, 5.2vw, 3.85rem);
+  --text-h2: clamp(1.55rem, 2.8vw, 2rem);
+  --text-lead: clamp(0.95rem, 1.6vw, 1.1rem);
+  --tracking-display: -0.025em;
+  --leading-display: 1.22;
+  --leading-body: 1.95;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), var(--font-noto), -apple-system,
-    BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-noto), var(--font-inter), -apple-system,
+    BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", sans-serif;
+  --font-display: var(--font-serif), var(--font-noto), serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  line-height: 1.9;
+  font-family: var(--font-sans);
+  line-height: var(--leading-body);
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 @media (prefers-reduced-motion: reduce) {
